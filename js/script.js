@@ -1,54 +1,77 @@
 // IIFE
-let pokemonList = [
-  {
-    name: "Charmander",
-    height: 0.6,
-    weight: 8.5,
-    type: ["fire"]
-  },
+let pokemonRepository = (function() {
+  let pokemonList = [
+    {
+      name: "Charmander",
+      height: 0.6,
+      weight: 8.5,
+      type: ["fire"]
+    },
 
-  {
-    name: "Venusaur",
-    height: 6.07,
-    weight: 220.5,
-    type: ["grass", " poison"]
-  },
+    {
+      name: "Venusaur",
+      height: 6.07,
+      weight: 220.5,
+      type: ["grass", " poison"]
+    },
 
-  {
-    name: "Squirtle",
-    height: 0.5,
-    weight: 9,
-    type: ["water"]
+    {
+      name: "Squirtle",
+      height: 0.5,
+      weight: 9,
+      type: ["water"]
+    }
+  ];
+
+  function add(pokemon) {
+    pokemonList.push(pokemon);
   }
-];
 
-for (let i = 0; i < pokemonList.length; i++) {
-  if (pokemonList[i].height > 1) {
+  function getAll() {
+    return pokemonList;
+  }
+
+  return {
+    add: add,
+    getAll: getAll
+  };
+})();
+
+console.log(pokemonRepository.getAll());
+pokemonRepository.add({ name: "Pikachu" });
+console.log(pokemonRepository.getAll());
+
+function writeToDomHelper(pokemon) {
+  if (pokemon.height > 1) {
     document.write(
-      pokemonList[i].name +
+      pokemon.name +
         "<br>Height : (" +
-        pokemonList[i].height +
+        pokemon.height +
         ")" +
         " Wow that's big!<br>" +
         "Weight : (" +
-        pokemonList[i].weight +
+        pokemon.weight +
         ")<br>" +
         "Type : (" +
-        pokemonList[i].type +
+        pokemon.type +
         ")<br>"
     );
   } else {
     document.write(
-      pokemonList[i].name +
+      pokemon.name +
         "<br>Height : (" +
-        pokemonList[i].height +
+        pokemon.height +
         ")<br>" +
         "Weight : (" +
-        pokemonList[i].weight +
+        pokemon.weight +
         ")<br>" +
         "Type : (" +
-        pokemonList[i].type +
+        pokemon.type +
         ")<br>"
     );
   }
 }
+
+pokemonRepository.getAll().forEach(function(pokemon) {
+  writeToDomHelper(pokemon);
+});
