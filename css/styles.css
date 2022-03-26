@@ -1,0 +1,14 @@
+.button-class {
+  padding: 16px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 6px 2px;
+  max-width: 150px;
+  width: 100%;
+  cursor: pointer;
+  background-color: white;
+  color: black;
+  border: 2px solid #cd5c5c;
+}

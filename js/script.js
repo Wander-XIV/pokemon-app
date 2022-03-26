@@ -31,47 +31,42 @@ let pokemonRepository = (function() {
     return pokemonList;
   }
 
+  function showDetails(pokemon) {
+    console.log(pokemon.name);
+  }
+
+  function addListener(button, pokemon) {
+    button.addEventListener("click", function() {
+      showDetails(pokemon);
+    });
+  }
+
+  function addListItem(pokemon) {
+    let pokemonList = document.querySelector(".pokemon-list");
+    let listpokemon = document.createElement("li");
+    let button = document.createElement("button");
+    button.innerText = pokemon.name;
+    button.classList.add("button-class");
+    listpokemon.appendChild(button);
+    pokemonList.appendChild(listpokemon);
+    addListener(button, pokemon);
+  }
   return {
     add: add,
-    getAll: getAll
+    getAll: getAll,
+    addListItem: addListItem
   };
 })();
 
-console.log(pokemonRepository.getAll());
-pokemonRepository.add({ name: "Pikachu" });
-console.log(pokemonRepository.getAll());
+pokemonRepository.add({
+  name: "Pikachu",
+  height: 0.3,
+  weight: 13.2,
+  types: ["electric"]
+});
 
-function writeToDomHelper(pokemon) {
-  if (pokemon.height > 1) {
-    document.write(
-      pokemon.name +
-        "<br>Height : (" +
-        pokemon.height +
-        ")" +
-        " Wow that's big!<br>" +
-        "Weight : (" +
-        pokemon.weight +
-        ")<br>" +
-        "Type : (" +
-        pokemon.type +
-        ")<br>"
-    );
-  } else {
-    document.write(
-      pokemon.name +
-        "<br>Height : (" +
-        pokemon.height +
-        ")<br>" +
-        "Weight : (" +
-        pokemon.weight +
-        ")<br>" +
-        "Type : (" +
-        pokemon.type +
-        ")<br>"
-    );
-  }
-}
+console.log(pokemonRepository.getAll());
 
 pokemonRepository.getAll().forEach(function(pokemon) {
-  writeToDomHelper(pokemon);
+  pokemonRepository.addListItem(pokemon);
 });
