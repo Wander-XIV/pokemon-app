@@ -1,14 +1,22 @@
 .button-class {
-  padding: 16px 32px;
+  padding: 6px 30px;
   text-align: center;
   text-decoration: none;
   display: inline-block;
   font-size: 16px;
-  margin: 6px 2px;
-  max-width: 150px;
+  margin: 3px 2px;
+  max-width: 200px;
   width: 100%;
   cursor: pointer;
   background-color: white;
   color: black;
-  border: 2px solid #a52a2a;
+  border: 3px solid #cd5c5c;
+}
+
+#loading-state {
+  display: none;
+}
+
+#loading-state.shown {
+  display: block;
 }
