@@ -56,7 +56,7 @@ let pokemonRepository = (function() {
   // Gets data from item url
 
   //loads pokemon details
-  async function loadDetails(item) {
+  function loadDetails(item) {
     loadingElement.classList.add("shown");
     let url = item.detailsUrl;
     return fetch(url)
@@ -100,17 +100,17 @@ let pokemonRepository = (function() {
     titleElement.innerText = pokemon.name;
 
     let heightElement = document.createElement("p");
-    heightElement.innerText = pokemon.height;
+    heightElement.innerText = "Height: " + pokemon.height;
 
     let weightElement = document.createElement("p");
-    weightElement.innerText = pokemon.weight;
+    weightElement.innerText = "Weight: " + pokemon.weight;
 
     let typeElement = document.createElement("p");
     pokemon.types.forEach((type, index) => {
       if (index === pokemon.types.length - 1) {
         typeElement.innerText += type.type.name;
       } else {
-        typeElement.innerText += type.type.name + ", ";
+        typeElement.innerText += "Type: " + type.type.name + ", ";
       }
     });
 
