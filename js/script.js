@@ -22,10 +22,10 @@ let pokemonRepository = (function() {
 
   function findPokemon(searchName) {
     //jquery syntax
-    // Clear all the buttons on the page when user types in search box
+    // Clear all the buttons on the page as user types in the search box
     $('.pokemon-list').empty();
 
-    // Add pokemon buttons for which the name includes the search string
+    // Add pokemon buttons for which the typed letters match
     pokemonList.forEach(pokemon => {
       if (
         capitalizeFirstLetter(pokemon.name).indexOf(
@@ -59,7 +59,7 @@ let pokemonRepository = (function() {
   }
   //modal to show details of pokemon
   function showModal(item) {
-    // creating the variables
+    // create the variables
     //jquery syntax
     let modalBody = $('.modal-body');
     let modalTitle = $('.modal-title');
@@ -111,7 +111,7 @@ let pokemonRepository = (function() {
       showDetails(pokemon);
     });
   }
-  //load lost of pokemon from apiUrl
+  //load list of pokemon from the apiUrl
   function loadList() {
     showLoadingMessage();
     return fetch(apiUrl)
@@ -134,7 +134,7 @@ let pokemonRepository = (function() {
         console.error(e);
       });
   }
-  //load data of each pokemon when click on pokemon
+  //load data of each pokemon when clicked on
   function loadDetails(item) {
     showLoadingMessage();
     let url = item.detailsUrl;
