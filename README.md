@@ -1,27 +1,33 @@
-Pokedex App
-Career Foundry Project 1. A small web application that loads data from an external API and enables the viewing of data points in detail.
+# js-app-pokedex
 
-Description:
-The Pokedex App uses HTML, CSS, And JS to create a simple app that allows the user to load pokemon information from an external API. The information is displayed in a list that can be interacted with to display specific data on the selected pokemon. There is a search function so the user can locate a specific pokemon as well as links to the API website and the Github for the app.\
+Simple Pokedex application
 
-Languages:
-• HTML
-• CSS
-• JavaScript
+## Description
 
-Libraries:
-• JQuery
+Project to implement some JQuery, Bootstrap and API calls. The App displays 150 pokemon by name, and will show some basic details when they are clicked. All information is being pulled directly from PokeAPI
 
-Frameworks:
-• Bootstrap
+## Getting Started
 
-The apps functions include:
-• Load data from the external pokemon API
-• Displays the pokemon in a list in order of ID
-• Each pokemon displays addityional info in a modal when selected
-• Uses CSS styling
-• Formatted JS following ESlint rules
-• Functions with no errors in Chrome, Safari, Firefox, and Internet Explorer 11.
+Load the page, click, search - have fun.
+
+### Dependencies
+
+- Bootstrap 4.3
+- JQuery 3.3.1
+- promise-polyfill
+
+### Executing program
+
+- Click any Pokemon to display some basic stats
+- Use the search bar to filter for specific Pokemon
+
+## Authors
+
+Brian McGaughan
+
+## Acknowledgments
+
+Inspiration, code snippets, etc.
 
 API & App website:
 PokeAPI: https://pokeapi.co/
