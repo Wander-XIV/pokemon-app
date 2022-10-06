@@ -21,10 +21,6 @@ Load the page, click, search - have fun.
 - Click any Pokemon to display some basic stats
 - Use the search bar to filter for specific Pokemon
 
-## Authors
-
-Brian McGaughan
-
 ## Acknowledgments
 
 Inspiration, code snippets, etc.
