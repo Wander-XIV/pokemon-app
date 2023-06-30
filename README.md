@@ -4,7 +4,7 @@ Simple Pokedex application
 
 ## Description
 
-Project to implement some JQuery, Bootstrap and API calls. The App displays 150 pokemon by name, and will show some basic details when they are clicked. All information is being pulled directly from PokeAPI
+Project to implement some JQuery, Bootstrap and API calls. The App displays pokemon by name, and will show some basic details when they are clicked. All information is being pulled directly from PokeAPI
 
 ## Getting Started
 
